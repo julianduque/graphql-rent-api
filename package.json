@@ -1,9 +1,10 @@
 {
   "name": "graphql-rent-api",
   "version": "1.0.0",
-  "description": "GraphQL API in Node.js with Apollo Server, PostgreSQL and Heroku Connect",
+  "description": "GraphQL API in Node.js with Apollo Server, PostgreSQL and Heroku",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
+    "start:debug": "node --inspect=0.0.0.0:9292 server.js",
     "start:dev": "nodemon server",
     "lint": "standard --fix"
   },
@@ -11,16 +12,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-express": "^2.9.1",
+    "apollo-server-express": "^2.22.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pg": "^8.0.2",
-    "sequelize": "^5.17.1",
-    "uuid": "^7.0.3"
+    "graphql": "^15.5.0",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "faker": "^4.1.0",
-    "nodemon": "^2.0.3",
-    "standard": "^14.1.0"
+    "faker": "^5.5.2",
+    "nodemon": "^2.0.7",
+    "standard": "^16.0.3"
   }
 }

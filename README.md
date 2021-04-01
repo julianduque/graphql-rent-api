@@ -17,10 +17,10 @@ Please set the following environment variables to run the application
 ## Setup Database
 
 ``` sh
-npx sequelize db:migrate
-npx sequelize db:seed:all
+export NODE_ENV=production
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
 ```
-
 ## License
 
 See [LICENSE](LICENSE) file.

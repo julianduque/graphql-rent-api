@@ -3,28 +3,20 @@ type Query {
     listCustomers(limit: Int = 10): [Customer]
     listProperties(limit: Int = 10): [Property]
     findProperties(city: String, bedrooms: Int, bathrooms: Int, limit: Int = 5): [Property]
-    listLeads: [Lead]
 }
 
 type Mutation {
-    createLead(lead: LeadInput!): Lead!
-}
-
-type Lead {
-    firstName: String!
-    lastName: String!
-    company: String!
-    email: String
-}
-
-input LeadInput {
-    firstName: String!
-    lastName: String!
-    company: String!
-    email: String 
+    createCustomer(customer: CustomerInput!): Customer!
 }
 
 type Customer {
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+}
+
+input CustomerInput {
     firstName: String!
     lastName: String!
     email: String!

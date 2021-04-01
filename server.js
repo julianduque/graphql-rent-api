@@ -5,8 +5,8 @@ require('dotenv').config()
 const http = require('http')
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
-const db = require('./models')
 const { typeDefs, resolvers } = require('./graphql')
+const services = require('./services')
 const port = +process.env.PORT || 8080
 const app = express()
 
@@ -15,8 +15,9 @@ const graphqlServer = new ApolloServer({
   typeDefs,
   resolvers,
   context ({ req }) {
+    services.collectQueries(req)
     return {
-      db
+      services
     }
   },
   playground: true,
@@ -27,10 +28,15 @@ app.get('/', (req, res) => {
   res.redirect('/graphql')
 })
 
+app.get('/stats', (req, res) => {
+  const stats = services.getQueryStats()
+  res.json(stats)
+})
+
 graphqlServer.applyMiddleware({
   app
 })
 
 server.listen(port, () => {
-  console.log(`GraphQL Server running on port ${port}`)
+  console.log(`GraphQL Server running on http://localhost:${port}`)
 })

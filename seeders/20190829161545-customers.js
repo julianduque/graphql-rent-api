@@ -5,7 +5,7 @@ const faker = require('faker')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const customers = []
-    for (let i = 0; i < 3e3; i++) {
+    for (let i = 0; i < 1e3; i++) {
       customers.push({
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
