@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "GraphQL API in Node.js with Apollo Server, PostgreSQL and Heroku",
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "start:debug": "node --inspect=0.0.0.0:9292 server.js",
-    "start:dev": "nodemon server",
+    "start:dev": "NODE_ENV=development nodemon server",
     "lint": "standard --fix"
   },
   "keywords": [],
