@@ -1,6 +1,6 @@
 # GraphQL Node.js API Example
 
-This is an example of a GraphQL API in Node.js with Apollo Server, PostgreSQL and Heroku Connect.
+This is an example of a GraphQL API in Node.js with Apollo Server, PostgreSQL and Heroku.
 
 ## Installation
 
