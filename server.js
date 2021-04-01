@@ -38,5 +38,5 @@ graphqlServer.applyMiddleware({
 })
 
 server.listen(port, () => {
-  console.log(`GraphQL Server running on http://localhost:${port}`)
+  console.log(`[${process.pid}] GraphQL Server running on http://localhost:${port}`)
 })
